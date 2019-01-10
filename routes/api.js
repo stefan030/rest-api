@@ -13,7 +13,7 @@ router.post('/ninjas', (req, res, next) => {
     // .then fires once the Ninja.create is finished
     Ninja.create(req.body).then((ninja) => {
         res.send(ninja);
-    }).catch(next);
+    }).catch(next); // Proceed with next middleware if there is an error - in index.js at error handle section
 
 });
 
