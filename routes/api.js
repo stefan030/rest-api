@@ -19,7 +19,9 @@ router.post('/ninjas', (req, res, next) => {
 
 // Update a ninja in the database
 router.put('/ninjas/:id', (req, res, next) => {
-    res.send({type: 'PUT'})
+    Ninja.findByIdAndUpdate({_id: req.params.id}, req.body, {new: true}).then((ninja) => {
+        res.send(ninja);
+    });
 });
 
 // Delete a ninja from the database
