@@ -10,6 +10,8 @@ const app = express();
 mongoose.connect('mongodb://localhost/ninjago', { useNewUrlParser: true });
 mongoose.Promise = global.Promise;
 
+app.use(express.static('public'));
+
 // Parse whats in the body of the request and give access to body (bodyParser is a middleware in this case - happens between requests)
 app.use(bodyParser.json());
 
